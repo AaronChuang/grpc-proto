@@ -2,11 +2,11 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 option java_package = "idv.aaron.grpc";
-option java_outer_classname = "ExampleProto";
+option java_outer_classname = "DailyProto";
 
-package example;
+package idv.aaron.svc;
 
-service ExampleService {
+service DailyService {
   rpc GetExample (ExampleRequest) returns (ExampleResponse);
 }
 
