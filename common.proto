@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "idv.aaron.grpc";
+option java_outer_classname = "CommonProto";
+
+package idv.aaron.common;
+
+enum Action {
+  QUERY = 0;
+  OTHER = 1;
+}
+
+enum ResponseCode {
+  SUCCESS = 0;
+  FAILURE = 1;
+}
+
+service CommonService {
+  rpc Call (GrpcRequest) returns (GrpcResponse);
+}
+
+message GrpcRequest {
+  Action action = 1;
+  string method = 2;
+  string data = 3;
+}
+
+message GrpcResponse {
+  ResponseCode code = 1;
+  string message = 2;
+  string result = 3;
+}
